@@ -5,10 +5,18 @@ import './App.css'
 import Todo from './Todo'
 import Actor from './Actor'
 import Writer from './Writer'
+import BookStore from './BookStore'
 
 function App() {
 
   const actors = ['sakib', 'Sariful raj', 'jasim', 'rubel', 'salman'];
+
+  const books = [
+    {id: 1, name: 'physics', price: 100},
+    {id: 2, name: 'biology', price: 120},
+    {id: 1, name: 'chemistry', price: 130},
+    {id: 1, name: 'Math', price: 150},
+  ]
 
   const writers = [
     {id: 1, name: 'Dr. Mahfuz', age: 68},
@@ -20,9 +28,13 @@ function App() {
     <> 
       <h3>Vite + React</h3>
 
+      <BookStore books={books}></BookStore>
+
       {
         writers.map(writer => <Writer writer={writer}></Writer>)
       }
+
+
 
       <Actor name={"steve"}></Actor>
       {
